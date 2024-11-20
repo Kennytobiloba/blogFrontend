@@ -24,7 +24,7 @@ const Login = () => {
           const {token, user} = res
           localStorage.setItem("user", JSON.stringify(user));
            alert("login successfully")
-          //  navigation('/')  
+           navigation('/')  
         
        } catch (error) {
         setMessage("pls provide a vaild email and password ")

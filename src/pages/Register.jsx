@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRegisterUserMutation } from '../redux/features/auth/authapi';
 
 const Register = () => {
@@ -8,6 +8,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [registerUser] = useRegisterUserMutation();
+  const navigation = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const Register = () => {
       const res = await registerUser(formdata).unwrap();
       console.log('Response:', res);
       alert(res.message || 'Registered successfully!');
+      navigation('/')  
     } catch (error) {
       console.error('Error occurred:', error);
       setMessage(error.data?.message || 'An unexpected error occurred');

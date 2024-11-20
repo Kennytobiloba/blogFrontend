@@ -21,7 +21,7 @@ const SingleBlog = () => {
                 blog?.post && (
                     <div className=' container mx-auto flex flex-col lg:flex-row mt-6 justify-between md:gap-12'>
                        <div>
-                       <SingleBlogCard blog={blog.post}/>
+                       <SingleBlogCard blog={blog?.post}/>
                         <div>
                             <Comment comments={blog?.comment}/>
                         </div>
