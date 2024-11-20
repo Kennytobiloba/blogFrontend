@@ -5,7 +5,7 @@ import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
 import { useNavigate, useParams } from 'react-router-dom'
-import { useFectPostBlogMutation, useUpdateBlogMutation, useFetchBlogByIdQuery } from "../redux/features/blog/blogApi";
+import {  useUpdateBlogMutation, useFetchBlogByIdQuery } from "../redux/features/blog/blogApi";
 
 
 

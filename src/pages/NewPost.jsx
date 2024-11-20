@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
-import { useFectPostBlogMutation } from "../redux/features/blog/blogApi";
 import { useNavigate } from "react-router-dom";
+import { usePostBlogMutation } from "../redux/features/blog/blogApi";
+
 
 
 const NewPost = () => {
@@ -44,7 +45,7 @@ const NewPost = () => {
       }
     };
   }, []);
- const [fectPostBlog, isLoading] = useFectPostBlogMutation()
+ const [postBlog, isLoading] = usePostBlogMutation()
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -61,7 +62,7 @@ const NewPost = () => {
         author: user?.id,
        }
         // console.log(newPost)
-         const res = await fectPostBlog(newPost).unwrap()
+         const res = await postBlog(newPost).unwrap()
          console.log("res", res)
          alert("posted posted sucefully")
          navigate('/dashboard') // redirect to home page

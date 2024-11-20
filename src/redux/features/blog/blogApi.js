@@ -19,7 +19,7 @@ export const BlogApi = createApi({
     fetchRelatedBlogs: builder.query({
       query: (id) => `/blogs/related/${id}`,
     }),
-    updateBlog: builder.mutation({
+    postBlog: builder.mutation({
       query: (post) => ({
         url: "/blogs/create_blog",
         method: "POST",
@@ -27,7 +27,7 @@ export const BlogApi = createApi({
         credentials: "include",
       }),
     }),
-    fetchUpdateBlog: builder.mutation({
+    updateBlog: builder.mutation({
       query: ({ id, ...rest }) => ({
         url: `/blogs/update_blog/${id}`,
         method: "PUT",
@@ -51,7 +51,7 @@ export const {
   useFetchBlogsQuery,
   useFetchBlogByIdQuery,
   useFetchRelatedBlogsQuery,
-  useFectPostBlogMutation,
+  usePostBlogMutation,
   useUpdateBlogMutation,
   useFetchDeleteBlogMutation,  // Corrected the hook name here
 } = BlogApi;
